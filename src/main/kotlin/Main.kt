@@ -1,3 +1,7 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import note.model.NoteManager
+
+fun main() {
+    val noteManager = NoteManager()
+    val mainMenu = Menu(noteManager)
+    mainMenu.show()
 }
