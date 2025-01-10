@@ -17,7 +17,7 @@ class NoteMenu(private val archive: ArchiveDto) {
             println("0. Назад.")
 
 
-            when (readLine()) {
+            when (val userInput = readLine()) {
                 "2" -> {
                     val createNoteMenu = CreateNoteMenu(archive)
                     createNoteMenu.show()
@@ -26,7 +26,7 @@ class NoteMenu(private val archive: ArchiveDto) {
                 "0" -> return
 
                 else -> {
-                    val index = readLine()?.toIntOrNull()
+                    val index = userInput?.toIntOrNull()
                     if (index != null && index in 1..archive.notes.size) {
                         val noteDisplayMenu = NoteDisplayMenu(archive.notes[index - 1])
                         noteDisplayMenu.show()

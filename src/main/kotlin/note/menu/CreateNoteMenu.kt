@@ -8,8 +8,10 @@ class CreateNoteMenu(private val archive: ArchiveDto) {
         println("Создание заметки:")
         print("Введите заголовок: ")
         val title = readLine() ?: ""
+        require(title.isNotEmpty()) { "Название заметки не может быть пустым." }
         print("Введите текст заметки: ")
         val content = readLine() ?: ""
+        require(content.isNotEmpty()) { "Заметка не может быть пустой." }
 
         archive.notes.add(NoteDto(title, content))
 

@@ -15,10 +15,12 @@ class Menu(private val noteManager: NoteManager) {
                     val archiveMenu = ArchiveMenu(noteManager)
                     archiveMenu.show()
                 }
+
                 "2" -> {
                     val createArchiveMenu = CreateArchiveMenu(noteManager)
                     createArchiveMenu.show()
                 }
+
                 "0" -> return
                 else -> println("Неверный выбор. Попробуйте снова.")
             }

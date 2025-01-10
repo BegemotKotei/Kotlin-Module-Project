@@ -3,9 +3,11 @@ package note.model
 import archive.ArchiveDto
 
 class NoteManager {
-    val archives = mutableListOf<ArchiveDto>()
+    private val _archives = mutableListOf<ArchiveDto>()
+
+    val archives: List<ArchiveDto> = _archives
 
     fun addArchive(archive: ArchiveDto) {
-        archives.add(archive)
+        _archives.add(archive)
     }
 }

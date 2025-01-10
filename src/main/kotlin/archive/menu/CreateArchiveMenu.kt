@@ -8,6 +8,7 @@ class CreateArchiveMenu(private val noteManager: NoteManager) {
         println("Создание архива:")
         print("Введите название архива: ")
         val name = readLine() ?: ""
+        require(name.isNotEmpty()) { "Название архива не может быть пустым." }
         noteManager.addArchive(ArchiveDto(name))
         println("Архив создан. Нажмите любую клавишу для продолжения.")
         readLine()

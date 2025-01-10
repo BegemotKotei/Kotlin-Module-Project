@@ -16,10 +16,10 @@ class ArchiveMenu(private val noteManager: NoteManager) {
             }
             println("0. Назад.")
 
-            when (readLine()) {
+            when (val userInput = readLine()) {
                 "0" -> return
                 else -> {
-                    val index = readLine()?.toIntOrNull()
+                    val index = userInput?.toIntOrNull()
                     if (index != null && index in 1..noteManager.archives.size) {
                         val noteMenu = NoteMenu(noteManager.archives[index - 1])
                         noteMenu.show()
